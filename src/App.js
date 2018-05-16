@@ -1,17 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import Header from './Header';
 import ContentWrapper from './ContentWrapper';
+=======
+>>>>>>> c9e8a0f821c32863335b3012788405ba390b682c
 
 class App extends React.Component {
   state = {
     value: '',
     items: [],
   };
+<<<<<<< HEAD
   addItem = value => {
     this.setState(oldState => ({
       items: [...oldState.items, value],
+=======
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  addItem = event => {
+    event.preventDefault();
+    this.setState(oldState => ({
+      items: [...oldState.items, this.state.value],
+>>>>>>> c9e8a0f821c32863335b3012788405ba390b682c
     }));
   };
 
@@ -19,6 +34,13 @@ class App extends React.Component {
     this.setState(prevState => ({ items: this.state.items.slice(0, -1) }));
   };
 
+<<<<<<< HEAD
+=======
+  inputIsEmpty = () => {
+    return this.state.value === '';
+  };
+
+>>>>>>> c9e8a0f821c32863335b3012788405ba390b682c
   noItemsFound = () => {
     return this.state.items.length === 0;
   };
@@ -26,6 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
        	<Header logo={logo} />
        	<ContentWrapper
          addItem={this.addItem}
@@ -37,6 +60,12 @@ class App extends React.Component {
          items={this.state.items}
        />
        {/*
+=======
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">ReactND - Coding Practice</h1>
+        </header>
+>>>>>>> c9e8a0f821c32863335b3012788405ba390b682c
         <h2>Shopping List</h2>
         <form onSubmit={this.addItem}>
           <input
@@ -56,7 +85,10 @@ class App extends React.Component {
         <ol className="item-list">
           {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
         </ol>
+<<<<<<< HEAD
         */}
+=======
+>>>>>>> c9e8a0f821c32863335b3012788405ba390b682c
       </div>
     );
   }
